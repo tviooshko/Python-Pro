@@ -12,25 +12,19 @@ def eattack(enemyattack,q,dhealth):
 def heal(dhealth,enemyattack):
     dhealth=dhealth+((wave+enemyattack)//2)
     return(dhealth)
-
-print('Напишите 1 для атаки, 2 для защиты. Ваша задача победить столько врагов сколько сможете.')
+print('Напишите 1 для атаки, 2 для лечения. Ваша задача победить столько врагов сколько сможете.')
 w=0
 q=0
-
 a1='слизень'
 a2='рыцарь'
 a3='дракон'
-
 attack=20
 health=100
 dhealth=health
-
 wave=0
 index=0
-
 enemyhealth=0
 enemyattack=0
-
 print('')
 while dhealth>0:
     if wave==12:
@@ -51,7 +45,6 @@ while dhealth>0:
         health+=5
         attack+=5
         wave+=1
-        
     elif index==5 or index==6:
         enemyhealth=80+wave*2
         enemyattack=20+wave*2
@@ -67,7 +60,6 @@ while dhealth>0:
         health+=10
         attack+=10
         wave+=1
-        
     elif index==7 and wave>10:
         enemyhealth=160+wave*2
         enemyattack=40+wave*2
@@ -75,7 +67,7 @@ while dhealth>0:
         while enemyhealth>0 and dhealth>0:
             w=input()
             if w=='1':
-                enemyhealth=attack(q,enemyhealth,attack)
+                enemyhealth=atack(q,enemyhealth,attack)
             dhealth=eattack(enemyattack,q,dhealth)
             if w=='2':
                 dhealth=heal(dhealth,enemyattack)
@@ -83,7 +75,6 @@ while dhealth>0:
         wave+=1
         health+=20
         attack+=20
-
     if dhealth<=0:
         break
     dhealth=health
