@@ -14,7 +14,7 @@ def heal(dhealth,enemyattack):
     return(dhealth)
 print('Напишите 1 для атаки, 2 для лечения. Ваша задача победить столько врагов сколько сможете.')
 print("напишите a для авто игры(придется зажать энтер)")
-auto =0
+auto=0
 if input()=='a':
     auto=1
 s=0
@@ -32,8 +32,6 @@ enemyhealth=0
 enemyattack=0
 print('')
 while 1:
-    if wave==12:
-        mastery=1
     index=random.randint(1,7)
     if index==1 or index==2 or index==3 or index==4 or wave<3:
         enemyhealth=40+wave*2
