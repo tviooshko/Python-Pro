@@ -36,7 +36,6 @@ while 1:
         enemyhealth=40+wave*2
         enemyattack=10+wave*2
         print('на вас напал слизень '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
-        s=a1
         while enemyhealth>0 and dhealth>0:
             if auto!=1:
                 w=input()
@@ -53,7 +52,6 @@ while 1:
         enemyhealth=80+wave*2
         enemyattack=20+wave*2
         print('на вас напал рыцарь '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
-        s=a2
         while enemyhealth>0 and dhealth>0:
             if auto!=1:
                 w=input()
@@ -70,7 +68,6 @@ while 1:
         enemyhealth=160+wave*2
         enemyattack=40+wave*2
         print('на вас напал дракон '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
-        s=a3
         while enemyhealth>0 and dhealth>0:
             if auto!=1:
                 w=input()
@@ -87,7 +84,6 @@ while 1:
         enemyhealth=400+wave*2
         enemyattack=200+wave
         print("на вас напал король слизней "+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
-        s=a3
         while enemyhealth>0 and dhealth>0:
             if auto!=1:
                 w=input()
@@ -113,7 +109,7 @@ while 1:
     if dhealth<=0:
         break
     dhealth=health
-    print('вы убили '+s+', ваше здоровье равно '+str(health)+' а ваша атака равна '+str(attack))
+    print('вы победили, ваше здоровье равно '+str(health)+' а ваша атака равна '+str(attack))
     print()
 wave=str(wave-1)
 print('вы умерли,вы победили '+wave+' врагов')
