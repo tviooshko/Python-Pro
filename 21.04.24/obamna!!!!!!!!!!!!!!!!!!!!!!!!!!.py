@@ -1,3 +1,4 @@
+#уээуэуееуэууэаэуаэуе))
 import random
 def atack(q,enemyhealth,attack):
     q=random.randint(1,2)
@@ -13,9 +14,9 @@ def heal(dhealth,enemyattack):
     dhealth=dhealth+((wave+enemyattack)//2)
     return(dhealth)
 print('Напишите 1 для атаки, 2 для лечения. Ваша задача победить столько врагов сколько сможете.')
-print("напишите a для авто игры(придется зажать энтер)")
+print("напишите a для авто игры")
 auto=0
-if input()=='a':
+if input()=='а':
     auto=1
 s=0
 w=0
@@ -25,6 +26,7 @@ a2='рыцарь'
 a3='дракон'
 attack=20
 health=100
+power=1
 dhealth=health
 wave=0
 index=0
@@ -39,15 +41,16 @@ while 1:
         print("на вас напал "+a1+' '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
         s=a1
         while enemyhealth>0 and dhealth>0:
-            w=input()
+            if auto!=1:
+                w=input()
             if w=='1' or auto==1:
                 enemyhealth=atack(q,enemyhealth,attack)
             dhealth=eattack(enemyattack,q,dhealth)
             if w=='2':
                 dhealth=heal(dhealth,enemyattack)
             print(dhealth,enemyhealth)
-        health+=5
-        attack+=5
+        health+=5*power
+        attack+=5*power
         wave+=1
     elif index==5 or index==6:
         enemyhealth=80+wave*2
@@ -55,15 +58,16 @@ while 1:
         print("на вас напал "+a2+' '+str(enemyhealth)+' здоровья'+' '+str(enemyattack)+' атк')
         s=a2
         while enemyhealth>0 and dhealth>0:
-            w=input()
+            if auto!=1:
+                w=input()
             if w=='1' or auto==1:
                 enemyhealth=atack(q,enemyhealth,attack)
             dhealth=eattack(enemyattack,q,dhealth)
             if w=='2':
                 dhealth=heal(dhealth,enemyattack)
             print(dhealth,enemyhealth)
-        health+=10
-        attack+=10
+        health+=10*power
+        attack+=10*power
         wave+=1
     elif index==7 and wave>10:
         enemyhealth=160+wave*2
@@ -71,7 +75,8 @@ while 1:
         print("на вас напал "+a3+' '+str(enemyhealth)+' здоровья'+' '+str(enemyattack)+' атк')
         s=a3
         while enemyhealth>0 and dhealth>0:
-            w=input()
+            if auto!=1:
+                w=input()
             if w=='1' or auto==1:
                 enemyhealth=atack(q,enemyhealth,attack)
             dhealth=eattack(enemyattack,q,dhealth)
@@ -79,8 +84,35 @@ while 1:
                 dhealth=heal(dhealth,enemyattack)
             print(dhealth,enemyhealth)
         wave+=1
-        health+=20
-        attack+=20
+        health+=20*power
+        attack+=20*power
+    if wave==299:
+        enemyhealth=400+wave*2
+        enemyattack=200+wave
+        print("на вас напал король слизней"+str(enemyhealth)+' здоровья'+' '+str(enemyattack)+' атк')
+        s=a3
+        while enemyhealth>0 and dhealth>0:
+            if auto!=1:
+                w=input()
+            if w=='1' or auto==1:
+                enemyhealth=atack(q,enemyhealth,attack)
+            dhealth=eattack(enemyattack,q,dhealth)
+            if w=='2':
+                dhealth=heal(dhealth,enemyattack)
+            print(dhealth,enemyhealth)
+        wave+=1
+        health+=50*power
+        attack+=50*power
+    if wave==299:
+        print('Вы стали настолько сильны, что познали этот мир полностью. Переродиться?')
+        if input()=='да':
+            power+=1
+            wave=0
+        else:
+            power=power
+    if power==5:
+        print('Поздравляем, вы стали настолько сильны что играть дальше для вас нет смысла. ВЫ ЛИКВИДИРОВАНЫ')
+        dhealth=-99999999999999999999999999999
     if dhealth<=0:
         break
     dhealth=health
