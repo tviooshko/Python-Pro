@@ -35,7 +35,7 @@ while 1:
     if index==1 or index==2 or index==3 or index==4 or wave<3:
         enemyhealth=40+wave*2
         enemyattack=10+wave*2
-        print("на вас напал слизень' '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
+        print('на вас напал слизень '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
         s=a1
         while enemyhealth>0 and dhealth>0:
             if auto!=1:
@@ -52,7 +52,7 @@ while 1:
     elif index==5 or index==6:
         enemyhealth=80+wave*2
         enemyattack=20+wave*2
-        print("на вас напал рыцарь '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
+        print('на вас напал рыцарь '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
         s=a2
         while enemyhealth>0 and dhealth>0:
             if auto!=1:
@@ -69,7 +69,7 @@ while 1:
     elif index==7 and wave>10:
         enemyhealth=160+wave*2
         enemyattack=40+wave*2
-        print("на вас напал дракон '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
+        print('на вас напал дракон '+str(enemyhealth)+' здоровья '+str(enemyattack)+' атк')
         s=a3
         while enemyhealth>0 and dhealth>0:
             if auto!=1:
